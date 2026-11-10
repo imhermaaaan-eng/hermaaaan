@@ -1,46 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hermann</title>
+<title>JaHermann — Portfolio</title>
 
-    <style>
-        body {
-            background-color: black;
-            color: red;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        a {
-            color: red;
-        }
+:root {
+    --background: #F1F1F1;
+    --text: #441010;
+    --border: #441010;
+}
 
-        hr {
-            border-color: red;
-        }
-    </style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* ОБЩИЕ БЛОКИ */
+
+.box {
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.placeholder {
+    font-size: clamp(18px, 3vw, 38px);
+    text-align: center;
+    font-weight: 300;
+}
+
+/* ЗАГОЛОВОК */
+
+.header {
+    width: 40%;
+    height: 65px;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* ВЕРХНЯЯ СЕКЦИЯ */
+
+.top {
+    display: grid;
+    grid-template-columns: 58% 40%;
+    gap: 2%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.intro {
+    height: 280px;
+    font-size: 48px;
+}
+
+.gallery-top {
+    height: 370px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.gallery-left {
+    height: 100%;
+}
+
+.gallery-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.gallery-right .box {
+    height: 100%;
+}
+
+.sidebar {
+    min-height: 674px;
+    font-size: 36px;
+}
+
+/* БАННЕР */
+
+.banner {
+    height: 130px;
+    margin: 28px 0 40px;
+    font-size: 42px;
+}
+
+/* НИЖНЯЯ ГАЛЕРЕЯ */
+
+.gallery-bottom {
+    display: grid;
+    grid-template-columns: 46% 31% 20%;
+    gap: 1.5%;
+    height: 360px;
+}
+
+.bottom-middle {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.bottom-middle .box {
+    height: 100%;
+}
+
+/* ПОДВАЛ */
+
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .top {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        height: 180px;
+    }
+
+    .gallery-top {
+        height: 280px;
+    }
+
+    .sidebar {
+        min-height: 250px;
+    }
+
+    .banner {
+        height: 100px;
+        font-size: 25px;
+    }
+
+    .gallery-bottom {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .gallery-bottom > .box {
+        min-height: 180px;
+    }
+
+    .bottom-middle {
+        min-height: 180px;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <h1>HERMANN</h1>
+<header class="box header">
+    <h1>JaHermann</h1>
+</header>
 
-    <p>Artist · Game Developer · Programmer · Researcher</p>
+<main>
 
-    <hr>
+    <section class="top">
 
-    <h2>Works</h2>
+        <div class="left">
 
-    <ul>
-        <li>Art</li>
-        <li>Game Development</li>
-        <li>Programming</li>
-        <li>History</li>
-        <li>Architecture</li>
-        <li>Animation</li>
-    </ul>
+            <div class="box intro">
+                <span>Artist · Developer</span>
+            </div>
+
+            <div class="gallery-top">
+
+                <div class="box gallery-left placeholder">
+                    Изображение 1
+                </div>
+
+                <div class="gallery-right">
+
+                    <div class="box placeholder">
+                        Изображение 2
+                    </div>
+
+                    <div class="box placeholder">
+                        Изображение 3
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <aside class="box sidebar">
+            Список
+        </aside>
+
+    </section>
+
+    <section class="box banner">
+        Баннер / Изображение 4
+    </section>
+
+    <section class="gallery-bottom">
+
+        <div class="box placeholder">
+            Изображение 5
+        </div>
+
+        <div class="bottom-middle">
+
+            <div class="box placeholder">
+                Изображение 6
+            </div>
+
+            <div class="box placeholder">
+                Изображение 7
+            </div>
+
+        </div>
+
+        <div class="box placeholder">
+            Изображение 8
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    JaHermann © 2026
+</footer>
 
 </body>
-</html
+</html>
